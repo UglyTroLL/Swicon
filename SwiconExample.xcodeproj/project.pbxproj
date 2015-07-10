@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B912CF921B4E69BF002170CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912CF911B4E69BF002170CE /* AppDelegate.swift */; };
+		B912CF941B4E69BF002170CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912CF931B4E69BF002170CE /* ViewController.swift */; };
+		B912CF971B4E69BF002170CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B912CF951B4E69BF002170CE /* Main.storyboard */; };
+		B912CF991B4E69BF002170CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B912CF981B4E69BF002170CE /* Images.xcassets */; };
+		B912CF9C1B4E69BF002170CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B912CF9A1B4E69BF002170CE /* LaunchScreen.xib */; };
+		B912CFA81B4E69BF002170CE /* SwiconExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912CFA71B4E69BF002170CE /* SwiconExampleTests.swift */; };
+		B912D01A1B4E6F50002170CE /* Swicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B912D00D1B4E6C6C002170CE /* Swicon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B912CFA21B4E69BF002170CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B912CF841B4E69BF002170CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B912CF8B1B4E69BF002170CE;
+			remoteInfo = SwiconExample;
+		};
+		B912D00C1B4E6C6C002170CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B912CFEB1B4E6C6B002170CE;
+			remoteInfo = Swicon;
+		};
+		B912D00E1B4E6C6C002170CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B912CFF61B4E6C6B002170CE;
+			remoteInfo = SwiconTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B912CF8C1B4E69BF002170CE /* SwiconExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiconExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B912CF901B4E69BF002170CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B912CF911B4E69BF002170CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B912CF931B4E69BF002170CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B912CF961B4E69BF002170CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B912CF981B4E69BF002170CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B912CF9B1B4E69BF002170CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B912CFA11B4E69BF002170CE /* SwiconExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiconExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B912CFA61B4E69BF002170CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B912CFA71B4E69BF002170CE /* SwiconExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiconExampleTests.swift; sourceTree = "<group>"; };
+		B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swicon.xcodeproj; path = Swicon/Swicon.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B912CF891B4E69BF002170CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B912D01A1B4E6F50002170CE /* Swicon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B912CF9E1B4E69BF002170CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B912CF831B4E69BF002170CE = {
+			isa = PBXGroup;
+			children = (
+				B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */,
+				B912CF8E1B4E69BF002170CE /* SwiconExample */,
+				B912CFA41B4E69BF002170CE /* SwiconExampleTests */,
+				B912CF8D1B4E69BF002170CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B912CF8D1B4E69BF002170CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B912CF8C1B4E69BF002170CE /* SwiconExample.app */,
+				B912CFA11B4E69BF002170CE /* SwiconExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B912CF8E1B4E69BF002170CE /* SwiconExample */ = {
+			isa = PBXGroup;
+			children = (
+				B912CF911B4E69BF002170CE /* AppDelegate.swift */,
+				B912CF931B4E69BF002170CE /* ViewController.swift */,
+				B912CF951B4E69BF002170CE /* Main.storyboard */,
+				B912CF981B4E69BF002170CE /* Images.xcassets */,
+				B912CF9A1B4E69BF002170CE /* LaunchScreen.xib */,
+				B912CF8F1B4E69BF002170CE /* Supporting Files */,
+			);
+			path = SwiconExample;
+			sourceTree = "<group>";
+		};
+		B912CF8F1B4E69BF002170CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B912CF901B4E69BF002170CE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B912CFA41B4E69BF002170CE /* SwiconExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B912CFA71B4E69BF002170CE /* SwiconExampleTests.swift */,
+				B912CFA51B4E69BF002170CE /* Supporting Files */,
+			);
+			path = SwiconExampleTests;
+			sourceTree = "<group>";
+		};
+		B912CFA51B4E69BF002170CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B912CFA61B4E69BF002170CE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B912D0081B4E6C6B002170CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B912D00D1B4E6C6C002170CE /* Swicon.framework */,
+				B912D00F1B4E6C6C002170CE /* SwiconTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B912CF8B1B4E69BF002170CE /* SwiconExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B912CFAB1B4E69BF002170CE /* Build configuration list for PBXNativeTarget "SwiconExample" */;
+			buildPhases = (
+				B912CF881B4E69BF002170CE /* Sources */,
+				B912CF891B4E69BF002170CE /* Frameworks */,
+				B912CF8A1B4E69BF002170CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiconExample;
+			productName = SwiconExample;
+			productReference = B912CF8C1B4E69BF002170CE /* SwiconExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B912CFA01B4E69BF002170CE /* SwiconExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B912CFAE1B4E69BF002170CE /* Build configuration list for PBXNativeTarget "SwiconExampleTests" */;
+			buildPhases = (
+				B912CF9D1B4E69BF002170CE /* Sources */,
+				B912CF9E1B4E69BF002170CE /* Frameworks */,
+				B912CF9F1B4E69BF002170CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B912CFA31B4E69BF002170CE /* PBXTargetDependency */,
+			);
+			name = SwiconExampleTests;
+			productName = SwiconExampleTests;
+			productReference = B912CFA11B4E69BF002170CE /* SwiconExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B912CF841B4E69BF002170CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Zhibo Wei";
+				TargetAttributes = {
+					B912CF8B1B4E69BF002170CE = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					B912CFA01B4E69BF002170CE = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = B912CF8B1B4E69BF002170CE;
+					};
+				};
+			};
+			buildConfigurationList = B912CF871B4E69BF002170CE /* Build configuration list for PBXProject "SwiconExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B912CF831B4E69BF002170CE;
+			productRefGroup = B912CF8D1B4E69BF002170CE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B912D0081B4E6C6B002170CE /* Products */;
+					ProjectRef = B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B912CF8B1B4E69BF002170CE /* SwiconExample */,
+				B912CFA01B4E69BF002170CE /* SwiconExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B912D00D1B4E6C6C002170CE /* Swicon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Swicon.framework;
+			remoteRef = B912D00C1B4E6C6C002170CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B912D00F1B4E6C6C002170CE /* SwiconTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiconTests.xctest;
+			remoteRef = B912D00E1B4E6C6C002170CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B912CF8A1B4E69BF002170CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B912CF971B4E69BF002170CE /* Main.storyboard in Resources */,
+				B912CF9C1B4E69BF002170CE /* LaunchScreen.xib in Resources */,
+				B912CF991B4E69BF002170CE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B912CF9F1B4E69BF002170CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B912CF881B4E69BF002170CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B912CF941B4E69BF002170CE /* ViewController.swift in Sources */,
+				B912CF921B4E69BF002170CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B912CF9D1B4E69BF002170CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B912CFA81B4E69BF002170CE /* SwiconExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B912CFA31B4E69BF002170CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B912CF8B1B4E69BF002170CE /* SwiconExample */;
+			targetProxy = B912CFA21B4E69BF002170CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B912CF951B4E69BF002170CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B912CF961B4E69BF002170CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B912CF9A1B4E69BF002170CE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B912CF9B1B4E69BF002170CE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B912CFA91B4E69BF002170CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B912CFAA1B4E69BF002170CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B912CFAC1B4E69BF002170CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwiconExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B912CFAD1B4E69BF002170CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SwiconExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B912CFAF1B4E69BF002170CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiconExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiconExample.app/SwiconExample";
+			};
+			name = Debug;
+		};
+		B912CFB01B4E69BF002170CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiconExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiconExample.app/SwiconExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B912CF871B4E69BF002170CE /* Build configuration list for PBXProject "SwiconExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B912CFA91B4E69BF002170CE /* Debug */,
+				B912CFAA1B4E69BF002170CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B912CFAB1B4E69BF002170CE /* Build configuration list for PBXNativeTarget "SwiconExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B912CFAC1B4E69BF002170CE /* Debug */,
+				B912CFAD1B4E69BF002170CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B912CFAE1B4E69BF002170CE /* Build configuration list for PBXNativeTarget "SwiconExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B912CFAF1B4E69BF002170CE /* Debug */,
+				B912CFB01B4E69BF002170CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B912CF841B4E69BF002170CE /* Project object */;
+}
