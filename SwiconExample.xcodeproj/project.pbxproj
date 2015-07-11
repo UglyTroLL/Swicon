@@ -461,6 +461,7 @@
 				B912CFAD1B4E69BF002170CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B912CFAE1B4E69BF002170CE /* Build configuration list for PBXNativeTarget "SwiconExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +470,7 @@
 				B912CFB01B4E69BF002170CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

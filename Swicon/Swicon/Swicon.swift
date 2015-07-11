@@ -50,7 +50,6 @@ public class Swicon {
                 let iconFont = fontsMap[fontPrefix]!
                 if let iconValue = iconFont.getIconValue(iconName) {
                     let iconUnicodeValue = iconValue.substringToIndex(advance(iconValue.startIndex, 1))
-                    NSLog("iconName : \(iconName) s raw value is \(iconValue), unicode value is \(iconUnicodeValue)")
                     if let uiFont = iconFont.getUIFont(fontSize) {
                         var attrs = [NSFontAttributeName : uiFont]
                         return NSMutableAttributedString(string:iconUnicodeValue, attributes:attrs)
@@ -220,12 +219,4 @@ private protocol IconFont {
     func loadFontIfNecessary()
     func getUIFont(fontSize: CGFloat) -> UIFont?
     func getIconValue(iconName: String) -> String?
-    //func getUIImage(fontName: String, textColor: UIColor, size: CGSize) -> UIImage?
-}
-
-private enum IconType: String {
-    case FONT_AWESOME = "fa"
-    case GOOGLE_MATERIAL = "gm"
-    case UNICODE = "unicode"
-    case CUSTOM = "custom"
 }
