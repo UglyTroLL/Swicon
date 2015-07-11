@@ -48,7 +48,7 @@ Copy all Swift files and ttf files into your project
   
 + Get iconic string or generate an image from the icon:
 
-  ```
+  ```swift
   //Get NSAttributedString, the "gm-games" is the name of Google Material Design's "games" icon
   let iconicString = Swicon.instance.getNSMutableAttributedString("gm-games", fontSize: 10)
   //Set it to label, to button, or whatever place you like
