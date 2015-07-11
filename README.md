@@ -1,6 +1,11 @@
 # Swicon
 Use 1600+ icons from FontAwesome and Google Material Icons in your iOS project in an easy and space-efficient way!
 
+The built-in icons are from 
++ [Google Material Design Icons 2.0](https://www.google.com/design/icons/)
++ [FontAwesome 4.3](http://fortawesome.github.io/Font-Awesome/icons/)
++ And you can add and use your **own** icons with lines of code.
+
 ## Installation
 
 ### CocoaPods
