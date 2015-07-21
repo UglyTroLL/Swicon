@@ -192,26 +192,33 @@ private class CustomIconFont: IconFont {
 
 private func loadFontFromFile(fontFileName: String, forClass: AnyClass, isCustom: Bool) -> Bool{
     let bundle = NSBundle(forClass: forClass)
-    var fontURL = NSURL()
+    var fontURL: NSURL?
     let identifier = bundle.bundleIdentifier
     
-    if identifier?.hasPrefix("org.cocoapods") == true && !isCustom {
+    if isCustom {
+        fontURL = NSBundle.mainBundle().URLForResource(fontFileName, withExtension: "ttf")
+    } else if identifier?.hasPrefix("org.cocoapods") == true {
         // If this framework is added using CocoaPods and it's not a custom font, resources is placed under a subdirectory
-        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf", subdirectory: "Swicon.bundle")!
+        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf", subdirectory: "Swicon.bundle")
     } else {
-        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf")!
+        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf")
     }
     
-    let data = NSData(contentsOfURL: fontURL)!
-    let provider = CGDataProviderCreateWithCFData(data)
-    let font = CGFontCreateWithDataProvider(provider)!
-    
-    if (!CTFontManagerRegisterGraphicsFont(font, nil)) {
-        NSLog("Failed to load font \(fontFileName)");
-        return false
+    if fontURL != nil {
+        let data = NSData(contentsOfURL: fontURL!)!
+        let provider = CGDataProviderCreateWithCFData(data)
+        let font = CGFontCreateWithDataProvider(provider)!
+        
+        if (!CTFontManagerRegisterGraphicsFont(font, nil)) {
+            NSLog("Failed to load font \(fontFileName)");
+            return false
+        } else {
+            NSLog("Registered font \(fontFileName)")
+            return true
+        }
     } else {
-        NSLog("Registered font \(fontFileName)")
-        return true
+        NSLog("Failed to load font \(fontFileName) because the file \(fontFileName) is not available");
+        return false
     }
 }
 
