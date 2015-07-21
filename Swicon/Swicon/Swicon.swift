@@ -105,7 +105,7 @@ private class FontAwesomeIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self)
+            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self, false)
         }
     }
     
@@ -135,7 +135,7 @@ private class GoogleMaterialIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self)
+            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self, false)
         }
     }
     
@@ -171,7 +171,7 @@ private class CustomIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(self.fontFileName, Swicon.self)
+            self.fontLoadedSucceed = loadFontFromFile(self.fontFileName, Swicon.self, true)
         }
     }
     
@@ -190,13 +190,13 @@ private class CustomIconFont: IconFont {
     
 }
 
-private func loadFontFromFile(fontFileName: String, forClass: AnyClass) -> Bool{
+private func loadFontFromFile(fontFileName: String, forClass: AnyClass, isCustom: Bool) -> Bool{
     let bundle = NSBundle(forClass: forClass)
     var fontURL = NSURL()
     let identifier = bundle.bundleIdentifier
     
-    if identifier?.hasPrefix("org.cocoapods") == true {
-        // If this framework is added using CocoaPods, resources is placed under a subdirectory
+    if identifier?.hasPrefix("org.cocoapods") == true && !isCustom {
+        // If this framework is added using CocoaPods and it's not a custom font, resources is placed under a subdirectory
         fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf", subdirectory: "Swicon.bundle")!
     } else {
         fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf")!
