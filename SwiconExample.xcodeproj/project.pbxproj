@@ -14,6 +14,8 @@
 		B912CF9C1B4E69BF002170CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B912CF9A1B4E69BF002170CE /* LaunchScreen.xib */; };
 		B912CFA81B4E69BF002170CE /* SwiconExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B912CFA71B4E69BF002170CE /* SwiconExampleTests.swift */; };
 		B912D01A1B4E6F50002170CE /* Swicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B912D00D1B4E6C6C002170CE /* Swicon.framework */; };
+		B978BB0A1B60E3FF00FCF1A4 /* IconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B978BB091B60E3FF00FCF1A4 /* IconCollectionViewController.swift */; };
+		B978BB0E1B60E55C00FCF1A4 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B978BB0D1B60E55C00FCF1A4 /* IconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		B912CFA61B4E69BF002170CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B912CFA71B4E69BF002170CE /* SwiconExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiconExampleTests.swift; sourceTree = "<group>"; };
 		B912D0071B4E6C6B002170CE /* Swicon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swicon.xcodeproj; path = Swicon/Swicon.xcodeproj; sourceTree = "<group>"; };
+		B978BB091B60E3FF00FCF1A4 /* IconCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewController.swift; sourceTree = "<group>"; };
+		B978BB0D1B60E55C00FCF1A4 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				B912CF981B4E69BF002170CE /* Images.xcassets */,
 				B912CF9A1B4E69BF002170CE /* LaunchScreen.xib */,
 				B912CF8F1B4E69BF002170CE /* Supporting Files */,
+				B978BB091B60E3FF00FCF1A4 /* IconCollectionViewController.swift */,
+				B978BB0D1B60E55C00FCF1A4 /* IconCollectionViewCell.swift */,
 			);
 			path = SwiconExample;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B912CF941B4E69BF002170CE /* ViewController.swift in Sources */,
+				B978BB0A1B60E3FF00FCF1A4 /* IconCollectionViewController.swift in Sources */,
 				B912CF921B4E69BF002170CE /* AppDelegate.swift in Sources */,
+				B978BB0E1B60E55C00FCF1A4 /* IconCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

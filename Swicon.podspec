@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Swicon"
-  s.version      = "0.82"
+  s.version      = "0.88"
   s.summary      = "Use 1600+ icons from FontAwesome and Google Material Icons in your iOS project in an easy and space-efficient way!"
   s.description  = <<-DESC
                    Use 1600+ icons from FontAwesome and Google Material Icons in your iOS project in an easy and space-efficient way!
