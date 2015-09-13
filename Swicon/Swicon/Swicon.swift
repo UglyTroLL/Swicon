@@ -46,18 +46,13 @@ public class Swicon {
     public func getNSMutableAttributedString(iconName: String, fontSize: CGFloat) -> NSMutableAttributedString? {
         for fontPrefix in fontsMap.keys {
             if iconName.hasPrefix(fontPrefix) {
-                NSLog("\(iconName) has prefix \(fontPrefix)")
                 let iconFont = fontsMap[fontPrefix]!
                 if let iconValue = iconFont.getIconValue(iconName) {
                     let iconUnicodeValue = iconValue.substringToIndex(advance(iconValue.startIndex, 1))
                     if let uiFont = iconFont.getUIFont(fontSize) {
                         var attrs = [NSFontAttributeName : uiFont]
                         return NSMutableAttributedString(string:iconUnicodeValue, attributes:attrs)
-                    } else {
-                        NSLog("font \(fontPrefix) is null")
                     }
-                } else {
-                    NSLog("But we couldnt find icon values for \(iconName)")
                 }
             }
         }
@@ -213,7 +208,6 @@ private func loadFontFromFile(fontFileName: String, forClass: AnyClass, isCustom
             NSLog("Failed to load font \(fontFileName)");
             return false
         } else {
-            NSLog("Registered font \(fontFileName)")
             return true
         }
     } else {
