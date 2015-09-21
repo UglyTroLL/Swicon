@@ -104,6 +104,7 @@ Swicon.instance.loadAllAsync() //Or Sync, depends on your needs
 
 ## Requirements
 iOS 8 or later.
+Swift 2 (Swift 1 can still use the version <= 0.90)
 
 ## License
 - FontAwesome.ttf file licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL)
