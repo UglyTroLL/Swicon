@@ -48,9 +48,9 @@ public class Swicon {
             if iconName.hasPrefix(fontPrefix) {
                 let iconFont = fontsMap[fontPrefix]!
                 if let iconValue = iconFont.getIconValue(iconName) {
-                    let iconUnicodeValue = iconValue.substringToIndex(advance(iconValue.startIndex, 1))
+                    let iconUnicodeValue = iconValue.substringToIndex(iconValue.startIndex.advancedBy(1))
                     if let uiFont = iconFont.getUIFont(fontSize) {
-                        var attrs = [NSFontAttributeName : uiFont]
+                        let attrs = [NSFontAttributeName : uiFont]
                         return NSMutableAttributedString(string:iconUnicodeValue, attributes:attrs)
                     }
                 }
@@ -60,17 +60,17 @@ public class Swicon {
     }
     
     public func getUIImage(iconName: String, iconSize: CGFloat, iconColour: UIColor = UIColor.blackColor(), imageSize: CGSize) -> UIImage {
-        var style = NSMutableParagraphStyle()
+        let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.Left
         style.baseWritingDirection = NSWritingDirection.LeftToRight
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0);
-        var attString = getNSMutableAttributedString(iconName, fontSize: iconSize)
+        let attString = getNSMutableAttributedString(iconName, fontSize: iconSize)
         if attString != nil {
             attString?.addAttributes([NSForegroundColorAttributeName: iconColour, NSParagraphStyleAttributeName: style], range: NSMakeRange(0, attString!.length))
             // get the target bounding rect in order to center the icon within the UIImage:
-            var ctx = NSStringDrawingContext()
-            var boundingRect = attString!.boundingRectWithSize(CGSizeMake(iconSize, iconSize), options: NSStringDrawingOptions.UsesDeviceMetrics, context: ctx)
+            let ctx = NSStringDrawingContext()
+            let boundingRect = attString!.boundingRectWithSize(CGSizeMake(iconSize, iconSize), options: NSStringDrawingOptions.UsesDeviceMetrics, context: ctx)
             
             attString!.drawInRect(CGRectMake((imageSize.width/2.0) - boundingRect.size.width/2.0, (imageSize.height/2.0) - boundingRect.size.height/2.0, imageSize.width, imageSize.height))
             
@@ -100,7 +100,7 @@ private class FontAwesomeIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self, false)
+            self.fontLoadedSucceed = loadFontFromFile(fontFileName, forClass: Swicon.self, isCustom: false)
         }
     }
     
@@ -130,7 +130,7 @@ private class GoogleMaterialIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(fontFileName, Swicon.self, false)
+            self.fontLoadedSucceed = loadFontFromFile(fontFileName, forClass: Swicon.self, isCustom: false)
         }
     }
     
@@ -166,7 +166,7 @@ private class CustomIconFont: IconFont {
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
             self.fontLoadedAttempted = true
-            self.fontLoadedSucceed = loadFontFromFile(self.fontFileName, Swicon.self, true)
+            self.fontLoadedSucceed = loadFontFromFile(self.fontFileName, forClass: Swicon.self, isCustom: true)
         }
     }
     
