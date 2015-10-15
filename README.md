@@ -6,6 +6,9 @@ The built-in icons are from
 + [FontAwesome 4.3](http://fortawesome.github.io/Font-Awesome/icons/)
 + And you can add and use your **own** icons with lines of code.
 
+##Examples and Screenshots
+![Swicon Screenshot](https://cloud.githubusercontent.com/assets/1897266/8847527/5b65d540-30e4-11e5-8db7-5f3dc4fd6078.png)
+
 ## Installation
 
 ### CocoaPods
@@ -98,9 +101,6 @@ Swicon.instance.addCustomFont(prefix: customFontPrefix, fontFileName: fontFileNa
 //Then init Swicon
 Swicon.instance.loadAllAsync() //Or Sync, depends on your needs
 ```
-
-##Examples and Screenshots
-![Swicon Screenshot](https://cloud.githubusercontent.com/assets/1897266/8847527/5b65d540-30e4-11e5-8db7-5f3dc4fd6078.png)
 
 ## Requirements
 iOS 8 or later.
