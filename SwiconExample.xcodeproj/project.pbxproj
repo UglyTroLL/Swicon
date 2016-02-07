@@ -189,6 +189,8 @@
 		B912CF841B4E69BF002170CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Zhibo Wei";
 				TargetAttributes = {

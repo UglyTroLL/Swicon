@@ -12,7 +12,7 @@ import Swicon
 
 let cellIdentifier = "IconCell"
 
-class IconCollectionViewController: UICollectionViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class IconCollectionViewController: UICollectionViewController {
     
     let iconNames = [
         "fa-bed",
@@ -79,15 +79,16 @@ class IconCollectionViewController: UICollectionViewController, UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Swicon.instance.loadAllSync(["gm"])
         for iconName in iconNames {
             iconImages.append(Swicon.instance.getUIImage(iconName, iconSize: 45, iconColour: getRandomColor(), imageSize: CGSizeMake(48, 48)))
         }
     }
     
     func getRandomColor() -> UIColor{
-        var randomRed:CGFloat = CGFloat(drand48())
-        var randomGreen:CGFloat = CGFloat(drand48())
-        var randomBlue:CGFloat = CGFloat(drand48())
+        let randomRed:CGFloat = CGFloat(drand48())
+        let randomGreen:CGFloat = CGFloat(drand48())
+        let randomBlue:CGFloat = CGFloat(drand48())
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     

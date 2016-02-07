@@ -170,6 +170,8 @@
 		B912CFE21B4E6C6B002170CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Zhibo Wei";
 				TargetAttributes = {
@@ -415,6 +417,7 @@
 				B912D0031B4E6C6B002170CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B912D0041B4E6C6B002170CE /* Build configuration list for PBXNativeTarget "SwiconTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +426,7 @@
 				B912D0061B4E6C6B002170CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

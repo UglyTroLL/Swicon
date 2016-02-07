@@ -15,7 +15,6 @@ public class Swicon {
     
     public static let instance = Swicon()
     
-    private var fontAwesoneLoaded = false, googleMaterialLoaded = false, customFontLoaded = false
     private let load_queue = dispatch_queue_create("com.swicon.font.load.queue", DISPATCH_QUEUE_SERIAL)
     
     private var fontsMap :[String: IconFont] = [
@@ -24,7 +23,6 @@ public class Swicon {
     ]
     
     private init() {
-        
     }
     
     public func addCustomFont(prefix: String, fontFileName: String, fontName: String, fontIconMap: [String: String]) {
@@ -33,13 +31,25 @@ public class Swicon {
     
     public func loadAllAsync() {
         dispatch_async(self.load_queue, {
-            self.loadAllSync()
+            self.loadAllSync([String](self.fontsMap.keys))
+        })
+    }
+    
+    public func loadAllAsync(fontNames:[String]) {
+        dispatch_async(self.load_queue, {
+            self.loadAllSync(fontNames)
         })
     }
     
     public func loadAllSync() {
-        for font in fontsMap.values {
-            font.loadFontIfNecessary()
+        self.loadAllSync([String](fontsMap.keys))
+    }
+    
+    public func loadAllSync(fontNames:[String]) {
+        for fontName in fontNames {
+            if let font = fontsMap[fontName] {
+                font.loadFontIfNecessary()
+            }
         }
     }
     

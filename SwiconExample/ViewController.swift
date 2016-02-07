@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Swicon.instance.loadAllSync()
+        Swicon.instance.loadAllSync(["gm"])
         label.attributedText = Swicon.instance.getNSMutableAttributedString("gm-games", fontSize: 10)
         btn.setAttributedTitle(Swicon.instance.getNSMutableAttributedString("fa-eur", fontSize: 10), forState: .Normal)
         img.image = Swicon.instance.getUIImage("fa-heart", iconSize: 100, iconColour: UIColor.blueColor(), imageSize: CGSizeMake(200, 200))
