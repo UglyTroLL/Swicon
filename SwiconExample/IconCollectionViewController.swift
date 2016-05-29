@@ -41,6 +41,7 @@ class IconCollectionViewController: UICollectionViewController {
         "fa-archive",
         "fa-bug",
         "fa-vk",
+        "fa-clone",
         "gm-sim_card",
         "gm-sim_card_alert",
         "gm-skip_next",
@@ -72,14 +73,15 @@ class IconCollectionViewController: UICollectionViewController {
         "gm-wifi",
         "gm-wifi_lock",
         "gm-wifi_tethering",
-        "gm-work"
+        "gm-work",
+        "gm-watch_later"
     ]
     
     var iconImages = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Swicon.instance.loadAllSync(["gm"])
+        Swicon.instance.loadAllSync()
         for iconName in iconNames {
             iconImages.append(Swicon.instance.getUIImage(iconName, iconSize: 45, iconColour: getRandomColor(), imageSize: CGSizeMake(48, 48)))
         }

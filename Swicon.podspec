@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Swicon"
-  s.version      = "0.91"
+  s.version      = "0.93"
   s.summary      = "Use 1600+ icons from FontAwesome and Google Material Icons in your iOS project in an easy and space-efficient way!"
   s.description  = <<-DESC
                    Use 1600+ icons from FontAwesome and Google Material Icons in your iOS project in an easy and space-efficient way!
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author       = { "Zhibo Wei" => "zweicmu@gmail.com" }
   s.platform     = :ios, '8.0'
   s.ios.deployment_target = '8.0'
-  s.source       = { :git => "https://github.com/UglyTroLL/Swicon.git", :tag => "0.91" }
+  s.source       = { :git => "https://github.com/UglyTroLL/Swicon.git", :tag => "0.93" }
   s.source_files  = "Swicon/Swicon/*.{swift}"
   s.resource_bundle = { 'Swicon' => 'Swicon/Swicon/*.ttf' }
   s.frameworks = 'UIKit', 'CoreText'

@@ -43,6 +43,7 @@ public class Swicon {
     
     public func loadAllSync() {
         self.loadAllSync([String](fontsMap.keys))
+        //NSLog("debug : font names : \(UIFont.familyNames())")
     }
     
     public func loadAllSync(fontNames:[String]) {
