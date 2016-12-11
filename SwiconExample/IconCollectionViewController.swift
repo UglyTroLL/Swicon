@@ -83,7 +83,7 @@ class IconCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         Swicon.instance.loadAllSync()
         for iconName in iconNames {
-            iconImages.append(Swicon.instance.getUIImage(iconName, iconSize: 45, iconColour: getRandomColor(), imageSize: CGSizeMake(48, 48)))
+            iconImages.append(Swicon.instance.getUIImage(iconName, iconSize: 45, iconColour: getRandomColor(), imageSize: CGSize(width: 48, height: 48)))
         }
     }
     
@@ -94,16 +94,16 @@ class IconCollectionViewController: UICollectionViewController {
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return iconImages.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! IconCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! IconCollectionViewCell
         let image = iconImages[indexPath.row]
         cell.iconImageView.image = image
         return cell

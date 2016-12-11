@@ -18,8 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Swicon.instance.loadAllSync(["gm"])
         label.attributedText = Swicon.instance.getNSMutableAttributedString("gm-games", fontSize: 10)
-        btn.setAttributedTitle(Swicon.instance.getNSMutableAttributedString("fa-eur", fontSize: 10), forState: .Normal)
-        img.image = Swicon.instance.getUIImage("fa-heart", iconSize: 100, iconColour: UIColor.blueColor(), imageSize: CGSizeMake(200, 200))
+        btn.setAttributedTitle(Swicon.instance.getNSMutableAttributedString("fa-eur", fontSize: 10), for: UIControlState())
+        img.image = Swicon.instance.getUIImage("fa-heart", iconSize: 100, iconColour: UIColor.blue, imageSize: CGSize(width: 200, height: 200))
         // Do any additional setup after loading the view, typically from a nib.
     }
 

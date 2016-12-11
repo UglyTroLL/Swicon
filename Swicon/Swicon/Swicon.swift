@@ -11,42 +11,42 @@ import UIKit
 import CoreText
 import Dispatch
 
-public class Swicon {
+open class Swicon {
     
-    public static let instance = Swicon()
+    open static let instance = Swicon()
     
-    private let load_queue = dispatch_queue_create("com.swicon.font.load.queue", DISPATCH_QUEUE_SERIAL)
+    fileprivate let load_queue = DispatchQueue(label: "com.swicon.font.load.queue", attributes: [])
     
-    private var fontsMap :[String: IconFont] = [
+    fileprivate var fontsMap :[String: IconFont] = [
         "fa": FontAwesomeIconFont(),
         "gm": GoogleMaterialIconFont()
     ]
     
-    private init() {
+    fileprivate init() {
     }
     
-    public func addCustomFont(prefix: String, fontFileName: String, fontName: String, fontIconMap: [String: String]) {
+    open func addCustomFont(_ prefix: String, fontFileName: String, fontName: String, fontIconMap: [String: String]) {
         fontsMap[prefix] = CustomIconFont(fontFileName: fontFileName, fontName: fontName, fontMap: fontIconMap)
     }
     
-    public func loadAllAsync() {
-        dispatch_async(self.load_queue, {
+    open func loadAllAsync() {
+        self.load_queue.async(execute: {
             self.loadAllSync([String](self.fontsMap.keys))
         })
     }
     
-    public func loadAllAsync(fontNames:[String]) {
-        dispatch_async(self.load_queue, {
+    open func loadAllAsync(_ fontNames:[String]) {
+        self.load_queue.async(execute: {
             self.loadAllSync(fontNames)
         })
     }
     
-    public func loadAllSync() {
+    open func loadAllSync() {
         self.loadAllSync([String](fontsMap.keys))
         //NSLog("debug : font names : \(UIFont.familyNames())")
     }
     
-    public func loadAllSync(fontNames:[String]) {
+    open func loadAllSync(_ fontNames:[String]) {
         for fontName in fontNames {
             if let font = fontsMap[fontName] {
                 font.loadFontIfNecessary()
@@ -54,12 +54,12 @@ public class Swicon {
         }
     }
     
-    public func getNSMutableAttributedString(iconName: String, fontSize: CGFloat) -> NSMutableAttributedString? {
+    open func getNSMutableAttributedString(_ iconName: String, fontSize: CGFloat) -> NSMutableAttributedString? {
         for fontPrefix in fontsMap.keys {
             if iconName.hasPrefix(fontPrefix) {
                 let iconFont = fontsMap[fontPrefix]!
                 if let iconValue = iconFont.getIconValue(iconName) {
-                    let iconUnicodeValue = iconValue.substringToIndex(iconValue.startIndex.advancedBy(1))
+                    let iconUnicodeValue = iconValue.substring(to: iconValue.characters.index(iconValue.startIndex, offsetBy: 1))
                     if let uiFont = iconFont.getUIFont(fontSize) {
                         let attrs = [NSFontAttributeName : uiFont]
                         return NSMutableAttributedString(string:iconUnicodeValue, attributes:attrs)
@@ -70,10 +70,10 @@ public class Swicon {
         return nil
     }
     
-    public func getUIImage(iconName: String, iconSize: CGFloat, iconColour: UIColor = UIColor.blackColor(), imageSize: CGSize) -> UIImage {
+    open func getUIImage(_ iconName: String, iconSize: CGFloat, iconColour: UIColor = UIColor.black, imageSize: CGSize) -> UIImage {
         let style = NSMutableParagraphStyle()
-        style.alignment = NSTextAlignment.Left
-        style.baseWritingDirection = NSWritingDirection.LeftToRight
+        style.alignment = NSTextAlignment.left
+        style.baseWritingDirection = NSWritingDirection.leftToRight
         
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0);
         let attString = getNSMutableAttributedString(iconName, fontSize: iconSize)
@@ -81,18 +81,18 @@ public class Swicon {
             attString?.addAttributes([NSForegroundColorAttributeName: iconColour, NSParagraphStyleAttributeName: style], range: NSMakeRange(0, attString!.length))
             // get the target bounding rect in order to center the icon within the UIImage:
             let ctx = NSStringDrawingContext()
-            let boundingRect = attString!.boundingRectWithSize(CGSizeMake(iconSize, iconSize), options: NSStringDrawingOptions.UsesDeviceMetrics, context: ctx)
+            let boundingRect = attString!.boundingRect(with: CGSize(width: iconSize, height: iconSize), options: NSStringDrawingOptions.usesDeviceMetrics, context: ctx)
             
-            attString!.drawInRect(CGRectMake((imageSize.width/2.0) - boundingRect.size.width/2.0, (imageSize.height/2.0) - boundingRect.size.height/2.0, imageSize.width, imageSize.height))
+            attString!.draw(in: CGRect(x: (imageSize.width/2.0) - boundingRect.size.width/2.0, y: (imageSize.height/2.0) - boundingRect.size.height/2.0, width: imageSize.width, height: imageSize.height))
             
             var iconImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            if(iconImage.respondsToSelector(Selector("imageWithRenderingMode:"))){
-                iconImage = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            if(iconImage?.responds(to: #selector(UIImage.withRenderingMode(_:))))!{
+                iconImage = iconImage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
             }
             
-            return iconImage
+            return iconImage!
         } else {
             return UIImage()
         }
@@ -102,11 +102,11 @@ public class Swicon {
 
 private class FontAwesomeIconFont: IconFont {
     
-    private let fontMap = FONT_AWESOME_ICON_MAPS
-    private let fontFileName = "fontawesome"
-    private let fontName = "FontAwesome"
-    private var fontLoadedAttempted = false
-    private var fontLoadedSucceed = false
+    fileprivate let fontMap = FONT_AWESOME_ICON_MAPS
+    fileprivate let fontFileName = "fontawesome"
+    fileprivate let fontName = "FontAwesome"
+    fileprivate var fontLoadedAttempted = false
+    fileprivate var fontLoadedSucceed = false
     
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
@@ -115,7 +115,7 @@ private class FontAwesomeIconFont: IconFont {
         }
     }
     
-    func getUIFont(fontSize: CGFloat) -> UIFont? {
+    func getUIFont(_ fontSize: CGFloat) -> UIFont? {
         self.loadFontIfNecessary()
         if (self.fontLoadedSucceed) {
             return UIFont(name: self.fontName, size: fontSize)
@@ -124,7 +124,7 @@ private class FontAwesomeIconFont: IconFont {
         }
     }
     
-    func getIconValue(iconName: String) -> String? {
+    func getIconValue(_ iconName: String) -> String? {
         return self.fontMap[iconName]
     }
     
@@ -132,11 +132,11 @@ private class FontAwesomeIconFont: IconFont {
 
 private class GoogleMaterialIconFont: IconFont {
     
-    private let fontMap = GOOGLE_MARTERIAL_ICON_MAPS
-    private let fontFileName = "gmdicons"
-    private let fontName = "Material Icons"
-    private var fontLoadedAttempted = false
-    private var fontLoadedSucceed = false
+    fileprivate let fontMap = GOOGLE_MARTERIAL_ICON_MAPS
+    fileprivate let fontFileName = "gmdicons"
+    fileprivate let fontName = "Material Icons"
+    fileprivate var fontLoadedAttempted = false
+    fileprivate var fontLoadedSucceed = false
     
     func loadFontIfNecessary() {
         if (!self.fontLoadedAttempted) {
@@ -145,7 +145,7 @@ private class GoogleMaterialIconFont: IconFont {
         }
     }
     
-    func getUIFont(fontSize: CGFloat) -> UIFont? {
+    func getUIFont(_ fontSize: CGFloat) -> UIFont? {
         self.loadFontIfNecessary()
         if (self.fontLoadedSucceed) {
             return UIFont(name: self.fontName, size: fontSize)
@@ -154,7 +154,7 @@ private class GoogleMaterialIconFont: IconFont {
         }
     }
     
-    func getIconValue(iconName: String) -> String? {
+    func getIconValue(_ iconName: String) -> String? {
         return self.fontMap[iconName]
     }
     
@@ -162,11 +162,11 @@ private class GoogleMaterialIconFont: IconFont {
 
 private class CustomIconFont: IconFont {
     
-    private let fontFileName: String
-    private let fontName: String
-    private let fontMap: [String: String]
-    private var fontLoadedAttempted = false
-    private var fontLoadedSucceed = false
+    fileprivate let fontFileName: String
+    fileprivate let fontName: String
+    fileprivate let fontMap: [String: String]
+    fileprivate var fontLoadedAttempted = false
+    fileprivate var fontLoadedSucceed = false
     
     init(fontFileName: String, fontName: String, fontMap: [String: String]) {
         self.fontFileName = fontFileName
@@ -181,7 +181,7 @@ private class CustomIconFont: IconFont {
         }
     }
     
-    func getUIFont(fontSize: CGFloat) -> UIFont? {
+    func getUIFont(_ fontSize: CGFloat) -> UIFont? {
         self.loadFontIfNecessary()
         if (self.fontLoadedSucceed) {
             return UIFont(name: self.fontName, size: fontSize)
@@ -190,30 +190,30 @@ private class CustomIconFont: IconFont {
         }
     }
     
-    func getIconValue(iconName: String) -> String? {
+    func getIconValue(_ iconName: String) -> String? {
         return self.fontMap[iconName]
     }
     
 }
 
-private func loadFontFromFile(fontFileName: String, forClass: AnyClass, isCustom: Bool) -> Bool{
-    let bundle = NSBundle(forClass: forClass)
-    var fontURL: NSURL?
+private func loadFontFromFile(_ fontFileName: String, forClass: AnyClass, isCustom: Bool) -> Bool{
+    let bundle = Bundle(for: forClass)
+    var fontURL: URL?
     let identifier = bundle.bundleIdentifier
     
     if isCustom {
-        fontURL = NSBundle.mainBundle().URLForResource(fontFileName, withExtension: "ttf")
+        fontURL = Bundle.main.url(forResource: fontFileName, withExtension: "ttf")
     } else if identifier?.hasPrefix("org.cocoapods") == true {
         // If this framework is added using CocoaPods and it's not a custom font, resources is placed under a subdirectory
-        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf", subdirectory: "Swicon.bundle")
+        fontURL = bundle.url(forResource: fontFileName, withExtension: "ttf", subdirectory: "Swicon.bundle")
     } else {
-        fontURL = bundle.URLForResource(fontFileName, withExtension: "ttf")
+        fontURL = bundle.url(forResource: fontFileName, withExtension: "ttf")
     }
     
     if fontURL != nil {
-        let data = NSData(contentsOfURL: fontURL!)!
-        let provider = CGDataProviderCreateWithCFData(data)
-        let font = CGFontCreateWithDataProvider(provider)!
+        let data = try! Data(contentsOf: fontURL!)
+        let provider = CGDataProvider(data: data as CFData)
+        let font = CGFont(provider!)
         
         if (!CTFontManagerRegisterGraphicsFont(font, nil)) {
             NSLog("Failed to load font \(fontFileName)");
@@ -229,6 +229,6 @@ private func loadFontFromFile(fontFileName: String, forClass: AnyClass, isCustom
 
 private protocol IconFont {
     func loadFontIfNecessary()
-    func getUIFont(fontSize: CGFloat) -> UIFont?
-    func getIconValue(iconName: String) -> String?
+    func getUIFont(_ fontSize: CGFloat) -> UIFont?
+    func getIconValue(_ iconName: String) -> String?
 }
