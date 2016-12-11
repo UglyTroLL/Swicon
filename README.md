@@ -20,7 +20,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Swicon', '0.93'
+pod 'Swicon', '0.94'
 ```
 
 Then, run the following command:
