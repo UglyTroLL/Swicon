@@ -215,7 +215,7 @@ private func loadFontFromFile(_ fontFileName: String, forClass: AnyClass, isCust
         let provider = CGDataProvider(data: data as CFData)
         guard let font = CGFont(provider!) else { return false }
         
-        if (!CTFontManagerRegisterGraphicsFont(font, nil)) {
+        if (!CTFontManagerRegisterGraphicsFont(font, nil) && isCustom == false) {
             NSLog("Failed to load font \(fontFileName)");
             return false
         } else {
